@@ -66,6 +66,8 @@ class HomeFragment : Fragment(), View.OnClickListener, View.OnLongClickListener 
             }
             R.id.clock -> openAlarmApp(requireContext())
             R.id.date -> openCalendar(requireContext())
+            R.id.dialer -> openDialerApp(requireContext())
+            R.id.camera -> openCameraApp(requireContext())
             R.id.setDefaultLauncher -> viewModel.resetDefaultLauncherApp(requireContext())
             else -> {
                 try { // Launch app
@@ -132,6 +134,8 @@ class HomeFragment : Fragment(), View.OnClickListener, View.OnLongClickListener 
         lock.setOnClickListener(this)
         clock.setOnClickListener(this)
         date.setOnClickListener(this)
+        dialer.setOnClickListener(this)
+        camera.setOnClickListener(this)
         setDefaultLauncher.setOnClickListener(this)
     }
 

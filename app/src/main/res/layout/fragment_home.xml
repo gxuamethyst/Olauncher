@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/mainLayout"
     android:layout_width="match_parent"
@@ -151,33 +152,58 @@
     </LinearLayout>
 
     <!-- First run tips -->
-    <LinearLayout
-        android:id="@+id/firstRunTips"
+    <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom"
-        android:layout_marginStart="4dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="56dp"
-        android:gravity="center_horizontal"
-        android:orientation="vertical"
-        android:visibility="gone"
-        tools:visibility="visible">
+        android:padding="@dimen/app_padding_vertical">
 
-        <TextView
-            style="@style/TextSmall"
+        <ImageView
+            android:id="@+id/dialer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="4dp"
-            android:text="@string/swipe_up_for_apps" />
+            android:layout_gravity="start|bottom"
+            android:layout_marginBottom="@dimen/app_padding_vertical"
+            android:padding="@dimen/app_padding_vertical"
+            app:srcCompat="@drawable/ic_call"
+            tools:ignore="ContentDescription" />
 
-        <TextView
-            style="@style/TextSmall"
+        <LinearLayout
+            android:id="@+id/firstRunTips"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/long_press_for_settings" />
+            android:layout_gravity="center"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:visibility="gone"
+            tools:visibility="visible">
 
-    </LinearLayout>
+            <TextView
+                style="@style/TextSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/swipe_up_for_apps" />
+
+            <TextView
+                style="@style/TextSmall"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="4dp"
+                android:text="@string/long_press_for_settings" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/camera"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end|bottom"
+            android:layout_marginBottom="@dimen/app_padding_vertical"
+            android:padding="@dimen/app_padding_vertical"
+            app:srcCompat="@drawable/ic_photo_camera"
+            tools:ignore="ContentDescription" />
+    </FrameLayout>
 
     <!-- Set default launcher -->
     <TextView
